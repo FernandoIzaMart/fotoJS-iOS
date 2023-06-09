@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Foto mvshub</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<title>Capturar y descargar foto con marco</title>
+</head>
+
+<body>
+
+	<section>
+		<header>
+			<img class="logo" src="assets/mvshub.png" alt="mvshub">
+		</header>
+		<center>
+			<h2>Tómate la foto como vendedor autorizado</h2>
+		</center>
+		
+
+		<h4>Selecciona un dispositivo</h4>
+		<div>
+			<select name="listaDeDispositivos" id="listaDeDispositivos"></select>
+			<button id="boton">Tomar foto</button>
+		</div>
+
+
+		<div class="frame container">
+			<img id="frame-img" class="img-fluid imgDesk" src="assets/MASCARA.png" alt="Marco">
+			<img id="frame-img" class="img-fluid imgMob" src="assets/mascara_movil.svg" alt="Marco">
+			<img id="frame-canva" class="img-fluid" src="assets/marco_vendedor_autorizado.png" alt="Marco" style="display: none;">
+			<img id="frame-canva2" class="img-fluid" src="assets/marco.png" alt="Marco" style="display: none;">
+			<img id="frame-canva-movil" class="img-fluid" src="assets/marco_movil.png" alt="Marco" style="display: none;">
+		
+			<div class="overlay">
+				<video id="video" class="img-fluid" width="389" height="514.7" autoplay></video>
+			</div>
+		</div>
+
+		<canvas id="canvas" style="display: none;"></canvas>
+
+	</section>
+
+
+	
+	
+</body>
+<script>
+	// Verificar si es un dispositivo móvil
+	const esDispositivoMovil = /Mobi/.test(navigator.userAgent);
+	console.log(esDispositivoMovil)
+	 
+	// Función para cargar los scripts según el tipo de dispositivo
+	function cargarScriptsSegunDispositivo() {
+	  if (window.innerWidth <= 430) {
+		  console.log('mob')
+		const scriptMovil = document.createElement('script');
+		scriptMovil.src = 'script-movil.js';
+		document.body.appendChild(scriptMovil);
+	  } else {
+		console.log('desk')
+		const scriptDesktop = document.createElement('script');
+		scriptDesktop.src = 'script-desktop.js';
+		document.body.appendChild(scriptDesktop);
+	  }
+	}
+  
+	// Cargar los scripts según el tipo de dispositivo
+	cargarScriptsSegunDispositivo();
+  </script>
+  
+
+</html>

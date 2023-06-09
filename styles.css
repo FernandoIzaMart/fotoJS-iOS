@@ -1,0 +1,108 @@
+
+        body {
+            background: linear-gradient(180deg, rgba(61,39,111,1) 0%, rgba(40,27,57,1) 25%, rgba(40,27,57,1) 50%, rgba(49,32,80,1) 75%, rgba(61,39,111,1) 100%) no-repeat;
+            background-size: cover;
+            height: auto;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white !important;
+        }
+        header {
+            margin: 1em;
+            border-bottom: 1px solid #C8AFFF;
+            padding: 1.5em 0;
+            text-align: center;
+        }
+
+        .frame {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            width: 389px;
+            height: 514.7px;
+            margin: 3em 0em 2em 0em;
+        }
+
+        #frame-img {
+            display: block;
+            position: absolute;
+            width: 389px;
+            height: 514.7px;
+            z-index: 10000;
+        }
+
+        .frame .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        select {
+            padding: 0.5em 1em;
+            border-radius: 24px;
+            border-right: 1em solid transparent;
+        }
+
+        button {
+            background: linear-gradient(180deg, rgba(235,78,22,1) 0%, rgba(246,125,15,1) 100%);
+            border-radius: 37px !important;
+            border: none;
+            padding: 0.5em 2em;
+            color: #fff;
+        }
+        .imgDesk {
+            display: block !important;
+        }
+        .imgMob {
+            display: none !important;
+        }
+
+      
+
+
+        @media (max-width:424px) {
+            .imgDesk {
+                display: none !important;
+            }
+            .imgMob {
+                display: block !important;
+                width: 300px !important;
+                height: 325px !important;
+            }
+            
+            #capture-btn{
+                position: absolute;
+                z-index: 999999;
+            }
+            .frame {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                width: 300px;
+                height: 325px;
+            }
+
+            .frame .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+
+        }
